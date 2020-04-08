@@ -12,10 +12,19 @@ use App\Security\LoginFormAuthenticator;
 use App\Entity\User;
 use App\Utils\User\Roles;
 
+/**
+ * register controller
+ * 
+ * @author Sebastian Chmiel <s.chmiel2@confronter.pl>
+ */
 class RegistrationController extends AbstractController
 {
     /**
      * @Route("/register", name="app_register")
+     * 
+     * register
+     * 
+     * @return Response
      */
     public function register(
         Request $request,

@@ -46,6 +46,11 @@ class User implements UserInterface
      */
     private $roles;
 
+    /**
+      * @ORM\Column(type="string", unique=true, nullable=true)
+      */
+      private $apiToken;
+
     public function __construct()
     {
         $this->roles = [Roles::ROLE_USER];
@@ -174,6 +179,28 @@ class User implements UserInterface
     public function setRoles(array $roles): self
     {
         $this->roles = $roles;
+
+        return $this;
+    }
+
+    /**
+     * get api token
+     *
+     * @return string|null
+     */
+    public function getApiToken(): ?string {
+        return $this->apiToken;
+    }
+
+    /**
+     * set api token
+     *
+     * @param string $apiToken
+     * 
+     * @return self
+     */
+    public function setApiToken(string $apiToken): self {
+        $this->apiToken = $apiToken;
 
         return $this;
     }

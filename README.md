@@ -31,7 +31,7 @@ For authorization it is necessary to send the required headers:
 
 | Endpoint | Method | Parameters | Description |
 | ------ | ------ | ------ | ------ | 
-| **/api/users** | `GET` | ```null``` | get all users |
+| **/api/users/** | `GET` | ```null``` | get all users |
 | **/api/users/{userId}** | `GET` | ```null``` | get single user data |
 | **/api/users/** | `POST` | **username** - user name <br> **email** - user email <br> **plainPassword** - password | add user |
 | **/api/users/** | `PATCH` | **username** - user name <br> **email** - user email <br> **plainPassword** - password | edit user |

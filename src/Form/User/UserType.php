@@ -1,13 +1,13 @@
 <?php
 
-namespace App\Form\Security;
+namespace App\Form\User;
 
 use App\Entity\User;
 use Symfony\Component\Form\FormBuilderInterface;
 use Symfony\Component\OptionsResolver\OptionsResolver;
 use App\Form\User\BaseUserType;
 
-class RegistrationFormType extends BaseUserType
+class UserType extends BaseUserType
 {
     /**
      * @param FormBuilderInterface $builder
@@ -18,6 +18,9 @@ class RegistrationFormType extends BaseUserType
     public function buildForm(FormBuilderInterface $builder, array $options)
     {
         parent::buildForm($builder, $options);
+
+        $builder
+            ->add('apiToken');
     }
 
     /**
@@ -29,6 +32,7 @@ class RegistrationFormType extends BaseUserType
     {
         $resolver->setDefaults([
             'data_class' => User::class,
+            'csrf_protection' => false,
         ]);
     }
 }

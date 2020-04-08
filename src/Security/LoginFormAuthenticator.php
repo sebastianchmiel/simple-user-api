@@ -14,6 +14,11 @@ use Symfony\Component\Security\Csrf\{CsrfToken, CsrfTokenManagerInterface};
 use Symfony\Component\Security\Guard\Authenticator\AbstractFormLoginAuthenticator;
 use Symfony\Component\Security\Http\Util\TargetPathTrait;
 
+/**
+ * authenticator for login form
+ * 
+ * @author Sebastian Chmiel <s.chmiel2@confronter.pl>
+ */
 final class LoginFormAuthenticator extends AbstractFormLoginAuthenticator
 {
     use TargetPathTrait;
