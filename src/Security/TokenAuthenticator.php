@@ -74,8 +74,6 @@ final class TokenAuthenticator extends AbstractGuardAuthenticator
         return $this->userRepository->findOneBy([
             'username' => $credentials['username'] ?? null
         ]);
-
-        return $this->userRepository->findOneBy(['username' => $credentials['username'] ?? null]);
     }
 
     /**
@@ -84,12 +82,12 @@ final class TokenAuthenticator extends AbstractGuardAuthenticator
      * @param array $credentials
      * @param UserInterface $user
      * 
-     * @return UserInterface|null
+     * @return bool
      */
     public function checkCredentials($credentials, UserInterface $user)
     {
         if (!isset($credentials['apiToken'])) {
-            return null;
+            return false;
         }
 
         return $user->getApiToken() === $credentials['apiToken'];
